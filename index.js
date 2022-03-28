@@ -1,21 +1,10 @@
-// console.log(paper, 'paper')
-// console.log(answer, 'answer')
-
-// options  attachment
-
-
-
 let CDATA = ['element_caption', 'element_text', 'question_text', 'sentences', 'options', 'content', 'knowledge', 'extend', 'attachment', 'analysis', 'directions', 'option', 'answer', 'answers', 'content_cn', 'item']
+
 function xmlToDom(string) {
     let DomParser = new window.DOMParser()
     let xmlDoc = DomParser.parseFromString(string, "text/xml").children[0];
     return xmlDoc;
 }
-var paperDom = xmlToDom(paper);
-var answerDom = xmlToDom(answer);
-
-console.log(paperDom, 'paperDom')
-console.log(answerDom, 'answerDom')
 
 function DomtoObj(dom) {
     if (dom && (dom.nodeType === 1 || dom.nodeType === 9)) {
@@ -46,7 +35,7 @@ function domDeep(dom) {
 function elementToObj(element) {
     let obj = {};
     obj.nodeName = element.nodeName;
-    if (element.hasChildNodes()) {      
+    if (element.hasChildNodes()) {
         Array.from(element.children).forEach(item => {
             if (item.children && item.children.length) {
                 let list = [];
@@ -56,7 +45,7 @@ function elementToObj(element) {
                 obj[item.nodeName] = list;
             } else {
                 if (item.nodeName === 'attachment' && item.textContent && item.textContent.trim()) {
-                    let attachment =  unescape(item.textContent);
+                    let attachment = unescape(item.textContent);
                     let xmlCode = attachment.slice(attachment.indexOf('<root>'))
                     let xmlObj = DomtoObj(xmlToDom(xmlCode));
                     // debugger
@@ -79,28 +68,25 @@ function elementToObj(element) {
                                 record_follow_read.paragraph_list = paragraph_list
                                 break;
                             case "modes":
-                                let mode_list = []
-                                el.mode && el.mode.forEach(_ => {
-                                    mode_list.push({
+                                if (el.mode) {
+                                    record_follow_read.mode_list = [{
                                         sentences: el.mode
-                                    })
-                                })
-                                record_follow_read.mode_list = mode_list
+                                    }]
+                                }
+
                                 break;
-                           
-                                case "answers":
-                                    record_follow_read.answers = el.answers
-                                    break;
-                                case "baseurl":
-                                    record_follow_read.baseurl = el.baseurl
+
+                            case "answers":
+                                record_follow_read.answers = el.answers
                                 break;
-                        
+                            case "baseurl":
+                                record_follow_read.baseurl = el.baseurl
+                                break;
+
                             default:
                                 break;
                         }
                     })
-                    console.log(xmlObj, 'xmlObj')
-
                     obj[item.nodeName] = xmlObj
                     obj.record_follow_read = record_follow_read;
                     if (!obj.deleteAttributeList) {
@@ -118,7 +104,7 @@ function elementToObj(element) {
             }
         })
     }
-   
+
     if (element.children && !element.children.length) {
         if (CDATA.includes(element.nodeName)) {
             obj[element.nodeName] = element.textContent.trim();
@@ -130,10 +116,10 @@ function elementToObj(element) {
         ...obj,
         ...attributesToObj(element),
         attributes: attributesToObj(element)
-    } 
+    }
     if (obj.nodeName === 'element') {
         obj.elementId = obj.id
-    }   
+    }
     return obj;
 }
 
@@ -145,12 +131,9 @@ function attributesToObj(dom) {
     return obj
 }
 
+function xmlToJson(xml) {
+    return DomtoObj(xmlToDom(xml))
+}
 
-var paperDomObj = DomtoObj(paperDom);
-var answerDomObj = DomtoObj(answerDom);
-
-
-
-console.log(paperDomObj, 'paperDom')
-console.log(answerDomObj, 'answerDom')
-
+// console.log(xmlToJson(paper), 'xmlToJson-paperDom')
+// console.log(xmlToJson(answer), 'xmlToJson-answerDom')

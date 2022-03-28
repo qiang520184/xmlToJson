@@ -1,0 +1,27 @@
+{
+    "template": "practice",
+    "sliders": {
+        "_DESC": "智能听说-诊断试题列表",
+        "_EDIT_TYPE": "LIST",
+        "_ELE_TEMP": {
+            "title": {
+                "_DESC": "标题",
+                "_EDIT_TYPE": "TEXT"
+            },
+            "questionList": {
+                "_DESC": "试题列表",
+                "_EDIT_TYPE": "LIST",
+                "_ELE_TEMP": {
+                    "quesObj": {
+                        "_DESC": "选择试题",
+                        "_EDIT_TYPE": "QUESTION"
+                    },
+                    "questionScore": {
+                        "_DESC": "不进报告时，填-1",
+                        "_EDIT_TYPE": "TEXT"
+                    }
+                }
+            }
+        }
+    }
+}

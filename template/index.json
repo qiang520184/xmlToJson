@@ -1,0 +1,165 @@
+{
+    "template": "practice",
+    "mediaRes": {
+        "_DESC" : "从素材中选择媒体资源（可选填）",
+        "_EDIT_TYPE": "RESOURCE"
+    },
+    "word":{
+        "_DESC": "音标单词讲解下面的试题列表内容",
+        "_EDIT_TYPE": "LIST",
+        "_ELE_TEMP": {
+            "title": {
+                "_DESC": "标题",
+                "_EDIT_TYPE": "TEXT"
+            },
+            "instruct": {
+                "_DESC" : "指示语",
+                "_EDIT_TYPE" : "TEXT"
+            },
+            "questionConfig":{
+                "_DESC" : "展示的题的相关配置",
+                "_EDIT_TYPE" : "TEXT"
+            },
+            "questionList": {
+                "_DESC": "试题列表",
+                "_EDIT_TYPE": "LIST",
+                "_ELE_TEMP":{
+                         "quesObj":{
+                            "_DESC": "选择试题",
+                            "_EDIT_TYPE": "QUESTION"
+                         },
+                        "questionScore":{
+                            "_DESC": "不进报告时，填-1",
+                            "_EDIT_TYPE": "TEXT"
+                          }
+                }
+            },
+            "poster":{
+                "_DESC": "视频封面图片名称,(比如 1.png)",
+                "_EDIT_TYPE": "TEXT"
+            },
+            "videoUrl":{
+                "_DESC": "视频地址,(比如 1.mp4)",
+                "_EDIT_TYPE": "TEXT"
+            },
+            "singleImg":{
+                "_DESC": "音标跟读题，弹窗部分发音要点的图片",
+                "_EDIT_TYPE": "TEXT"
+            },
+            "singleContext":{
+                "_DESC": "音标跟读题，弹窗部分发音要点的介绍内容",
+                "_EDIT_TYPE": "TEXT"
+            },
+            "showStar":{
+                "_DESC": "是否显示分数填 1或者0",
+                "_EDIT_TYPE": "TEXT"
+            }
+        }
+    },
+    "practice":{
+        "_DESC": "音标配套练习题下面的试题列表内容",
+        "_EDIT_TYPE": "LIST",
+        "_ELE_TEMP": {
+            "title": {
+                "_DESC": "标题",
+                "_EDIT_TYPE": "TEXT"
+            },
+            "instruct": {
+                "_DESC" : "指示语",
+                "_EDIT_TYPE" : "TEXT"
+            },
+            "questionConfig":{
+                "_DESC" : "展示的题的相关配置",
+                "_EDIT_TYPE" : "TEXT"
+            },
+            "questionList": {
+                "_DESC": "试题列表",
+                "_EDIT_TYPE": "LIST",
+                "_ELE_TEMP":{
+                    "_DESC": "试题",
+                    "_EDIT_TYPE": "QUESTION"
+                }
+            },
+            "cardAudioList":{
+                "_DESC": "翻牌题，每个卡片对应的音频地址",
+                "_EDIT_TYPE": "LIST",
+                "_ELE_TEMP":{
+                    "cardAudio":{
+                        "_DESC": "每个卡片对应的音频地址,用英文;隔开",
+                        "_EDIT_TYPE": "TEXT"
+                    }
+                }
+            }
+        }
+    },
+    "cartoon":{
+        "_DESC": "绘本听读下面的试题列表内容",
+        "_EDIT_TYPE": "LIST",
+        "_ELE_TEMP": {
+            "title": {
+                "_DESC": "标题",
+                "_EDIT_TYPE": "TEXT"
+            },
+            "shareTitle": {
+                "_DESC": "分享展示的标题",
+                "_EDIT_TYPE": "TEXT"
+            },
+            "instruct": {
+                "_DESC" : "指示语",
+                "_EDIT_TYPE" : "TEXT"
+            },
+            "questionConfig":{
+                "_DESC" : "展示的题的相关配置",
+                "_EDIT_TYPE" : "TEXT"
+            },
+            "questionList": {
+                "_DESC": "试题列表",
+                "_EDIT_TYPE": "LIST",
+                "_ELE_TEMP":{
+                    "_DESC": "试题",
+                    "_EDIT_TYPE": "QUESTION"
+                }
+            },
+            "localMedia":{
+                "_DESC": "绘本图片本地地址英文分号隔开",
+                "_EDIT_TYPE": "TEXT"
+            },
+            "onlineMedia":{
+                "_DESC": "绘本图片在线地址英文分号隔开",
+                "_EDIT_TYPE": "TEXT"
+            }
+        }
+    },
+    "heavyWord":{
+        "_DESC": "动画部分显示的重点词",
+        "_EDIT_TYPE": "LIST",
+        "_ELE_TEMP": {
+            "word": {
+                "_DESC": "单词",
+                "_EDIT_TYPE": "TEXT"
+            },
+            "single":{
+                "_DESC": "音标",
+                "_EDIT_TYPE": "TEXT"
+            }
+        }
+    },
+    "heavySentence":{
+        "_DESC": "动画部分显示的重点句",
+        "_EDIT_TYPE": "LIST",
+        "_ELE_TEMP": {
+            "sentence": {
+                "_DESC": "句子",
+                "_EDIT_TYPE": "TEXT"
+            }
+        }
+    },
+    "jumpWord":{
+        "_DESC": "动画用单词1 (i m)",
+        "_EDIT_TYPE": "TEXT"
+    },
+    "fadeWord":{
+        "_DESC": "动画用单词2 (a)",
+        "_EDIT_TYPE": "TEXT"
+    }
+}
